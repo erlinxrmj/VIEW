@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    android:clipChildren="false">
+
+    <!-- Inhalt: links Kategorien, rechts Sender -->
+    <LinearLayout
+        android:id="@+id/contentRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/sidebar"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_sidebar"
+            android:orientation="vertical"
+            android:paddingStart="30dp"
+            android:paddingTop="30dp"
+            android:paddingEnd="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="8dp">
+
+                <TextView
+                    android:id="@+id/brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_extrabold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.16"
+                    android:text="VIEW"
+                    android:textColor="@color/text"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/bg_live"
+                    android:fontFamily="@font/inter_bold"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="0.12"
+                    android:paddingStart="7dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="7dp"
+                    android:paddingBottom="4dp"
+                    android:text="LIVE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/inter_semibold"
+                android:letterSpacing="0.14"
+                android:paddingStart="10dp"
+                android:text="KATEGORIEN"
+                android:textColor="@color/text3"
+                android:textSize="11sp" />
+
+            <androidx.leanback.widget.VerticalGridView
+                android:id="@+id/categories"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingTop="4dp"
+                android:paddingBottom="28dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingTop="30dp"
+            android:paddingEnd="48dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/catTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter_bold"
+                        android:includeFontPadding="false"
+                        android:singleLine="true"
+                        android:textColor="@color/text"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/catSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:includeFontPadding="false"
+                        android:singleLine="true"
+                        android:textColor="@color/text2"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <TextClock
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:format12Hour="HH:mm"
+                        android:format24Hour="HH:mm"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/text"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/expiry"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/text3"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="14dp"
+                android:layout_weight="1"
+                android:clipChildren="false">
+
+                <androidx.leanback.widget.VerticalGridView
+                    android:id="@+id/channels"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:paddingStart="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="32dp" />
+
+                <LinearLayout
+                    android:id="@+id/empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="40dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/bg_fav_dot"
+                        android:importantForAccessibility="no"
+                        android:padding="16dp"
+                        android:src="@drawable/ic_star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="Noch keine Favoriten"
+                        android:textColor="@color/text"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:gravity="center"
+                        android:maxWidth="360dp"
+                        android:text="Halte OK auf einem Sender gedrückt, dann erscheint er hier – und VIEW startet immer mit deinen Favoriten."
+                        android:textColor="@color/text2"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Laden / Fehler -->
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_app"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/loadingBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_extrabold"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.16"
+            android:text="VIEW"
+            android:textColor="@color/text"
+            android:textSize="64sp" />
+
+        <ProgressBar
+            android:id="@+id/loadingSpinner"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="34dp"
+            android:indeterminateTint="@color/accent" />
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            android:maxWidth="520dp"
+            android:textColor="@color/text2"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/loadingButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/btnRetry"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="center"
+                android:nextFocusLeft="@+id/btnRetry"
+                android:text="Erneut versuchen"
+                android:textColor="@color/button_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/btnErrLogout"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="14dp"
+                android:background="@drawable/bg_menu_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="center"
+                android:nextFocusRight="@+id/btnErrLogout"
+                android:text="Abmelden"
+                android:textColor="@color/menu_text"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Kurze Meldung (Favoriten) -->
+    <LinearLayout
+        android:id="@+id/toast"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="36dp"
+        android:alpha="0"
+        android:background="@drawable/bg_toast"
+        android:elevation="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="24dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/toastIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_fav_dot"
+            android:importantForAccessibility="no"
+            android:padding="7dp"
+            android:src="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/toastText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/inter_semibold"
+            android:textColor="@color/ink"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <!-- Menü (Zurück-Taste) -->
+    <FrameLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_overlay"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="420dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_panel"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:id="@+id/menuBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_extrabold"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.16"
+                android:text="VIEW"
+                android:textColor="@color/text"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/menuInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/inter_medium"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@color/text2"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/btnClose"
+                style="@style/ViewMenuButton"
+                android:nextFocusLeft="@+id/btnClose"
+                android:nextFocusRight="@+id/btnClose"
+                android:nextFocusUp="@+id/btnClose"
+                android:text="Weiter schauen" />
+
+            <TextView
+                android:id="@+id/btnRefresh"
+                style="@style/ViewMenuButton"
+                android:nextFocusLeft="@+id/btnRefresh"
+                android:nextFocusRight="@+id/btnRefresh"
+                android:text="Senderliste aktualisieren" />
+
+            <TextView
+                android:id="@+id/btnLogout"
+                style="@style/ViewMenuButton"
+                android:nextFocusLeft="@+id/btnLogout"
+                android:nextFocusRight="@+id/btnLogout"
+                android:text="Abmelden" />
+
+            <TextView
+                android:id="@+id/btnExit"
+                style="@style/ViewMenuButton"
+                android:nextFocusDown="@+id/btnExit"
+                android:nextFocusLeft="@+id/btnExit"
+                android:nextFocusRight="@+id/btnExit"
+                android:text="VIEW beenden" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Entwickelt von Erlin Ramaj"
+                android:textColor="@color/text3"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>
